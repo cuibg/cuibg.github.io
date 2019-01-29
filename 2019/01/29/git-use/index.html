@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Android、Html5、IT发展"><title>Git命令使用简介 | 杂谈</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Git命令使用简介</h1><a id="logo" href="/.">杂谈</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Git命令使用简介</h1><div class="post-meta">Jan 29, 2019<span> | </span><span class="category"><a href="/categories/技术/">技术</a></span></div><div class="post-content"><h3 id="git-初始设置"><a href="#git-初始设置" class="headerlink" title="git 初始设置"></a>git 初始设置</h3><ol>
+<li>设置姓名和邮箱<ul>
+<li>git config –global user.name “name”</li>
+<li>git config –global user.email “<a href="mailto:your_email@email.com" target="_blank" rel="noopener">your_email@email.com</a>“<br>执行这个命令后会生成一个  .gitconfig文件</li>
+</ul>
+</li>
+<li>设置颜色<br>git config –global color.ui auto</li>
+<li>查看设置信息<br>cat ~/.gitconfig </li>
+</ol>
+<hr>
+<h3 id="使用git前期准备"><a href="#使用git前期准备" class="headerlink" title="使用git前期准备"></a>使用git前期准备</h3><h5 id="Github上连接已有仓库时的认证，是通过使用了ssh的公开密钥认证方式。"><a href="#Github上连接已有仓库时的认证，是通过使用了ssh的公开密钥认证方式。" class="headerlink" title="Github上连接已有仓库时的认证，是通过使用了ssh的公开密钥认证方式。"></a>Github上连接已有仓库时的认证，是通过使用了ssh的公开密钥认证方式。</h5><ul>
+<li>ssh-keygen -t rsa -C “<a href="mailto:your_email@email.com" target="_blank" rel="noopener">your_email@email.com</a>“<br>来创建ssh Key</li>
+<li>id_rsa 文件时私有密钥</li>
+<li>id_rsa.pub 文件是公有密钥<br>*cat ~/.ssh/id_rsa.pub 查看公有密钥</li>
+</ul>
+<h4 id="在github上添加ssh公钥添加完后"><a href="#在github上添加ssh公钥添加完后" class="headerlink" title="在github上添加ssh公钥添加完后"></a>在github上添加ssh公钥添加完后</h4><ul>
+<li>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a> 进行查看是否成功 </li>
+</ul>
+<h3 id="在github上建立仓库reposity"><a href="#在github上建立仓库reposity" class="headerlink" title="在github上建立仓库reposity"></a>在github上建立仓库reposity</h3><p>git上会有一个ssh clone URL，把他克隆到本地</p>
+<ol>
+<li>git clone URL</li>
+<li>提交<br>git add 将文件加入暂存区<br>git commit 进行提交</li>
+<li>进行push，将github上的代码会被更新</li>
+<li>git init用于初始化仓库</li>
+<li>git status 用于查看仓库状态</li>
+<li>git add 向暂存区中添加文件</li>
+<li>git commit 保存仓库信息，-m表示只记录一行信息</li>
+<li>git log查看提交日志</li>
+<li>git log -p 显示所有文件的改动</li>
+<li>git log -p README.md 显示rede.md文件的改动</li>
+<li>git diff 查看更改前后的差别</li>
+<li>git branch 显示分支</li>
+<li>git checkout -b 创建分支</li>
+<li>git checkout 切换分支，git checkout切换到上一层分支</li>
+<li>git merge合并分支，加上–no–ff表示在历史记录上明确记录下合并分支</li>
+<li>git log –graph表示图表显示分支</li>
+</ol>
+</div><div class="tags"><a href="/tags/Git/">Git</a></div><div class="post-nav"><a class="next" href="/2019/01/29/2018feel/">夜半深思</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="http://yoursite.com"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/心情/">心情</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/感想/" style="font-size: 15px;">感想</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/29/git-use/">Git命令使用简介</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/29/2018feel/">夜半深思</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/27/AndroidMultiChannel/">Android多渠道资源问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/27/Bitmap/">Android中Bitmap</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.google.com/" title="Google" target="_blank">Google</a><ul></ul><a href="http://www.biying.com/" title="必应" target="_blank">必应</a><ul></ul><a href="http://dloptimber.com/" title="dloptimber的九点半" target="_blank">dloptimber的九点半</a><ul></ul><a href="http://jolestar.com/" title="午夜咖啡" target="_blank">午夜咖啡</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">杂谈.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
